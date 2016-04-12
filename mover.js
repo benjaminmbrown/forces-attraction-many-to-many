@@ -13,13 +13,13 @@ var Mover = function(m, x, y) {
     this.acceleration.add(f);
   };
     
-    this.attract = function(enitity){
-      var force = p5.Vector.sub(position, entity.position);
+    this.attract = function(entity){
+      var force = p5.Vector.sub(this.position, entity.position);
       var distance = force.mag();
-      distance.constrain(distance,5.0,25.00);
+       distance = constrain(distance, 5.0, 25.0);
       force.normalize();
 
-      var strength = (G * mass * entity.mass)/distance*distance;
+      var strength = (this.G * this.mass * entity.mass)/distance*distance;
       force.mult(strength);
       return force;
     }

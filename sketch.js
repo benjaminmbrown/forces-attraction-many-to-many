@@ -2,6 +2,7 @@ var movers = [];
 var liquid;
 var noiseScale = 3;
 var attractor;
+var G = 1;
 
 function setup() {
  createCanvas(640, 360);
@@ -14,7 +15,7 @@ function setup() {
 
 function draw() {
   background(255);
-  attractor.display();
+  //attractor.display();
 
   for(var i = 0; i <movers.length;i++){
     for(var j = 0; j<movers.length; j++){
